@@ -1,0 +1,11 @@
+<center>
+<h3>Create a order </h3>
+<%= form_with model: @order do |f|%>
+<%= f.text_field :Order_Number, placeholder:"Enter your order number" %> <br>
+<%= f.text_field :Date_of_Order, placeholder:"Enter your date of order" %> <br>
+<%= f.text_field :order_Status, placeholder:"Enter your order status" %> <br>
+<%= f.text_field :Billing_Address, placeholder:"Enter your billing address" %> <br>
+<%= f.text_field :Shipping_Address, placeholder:"Enter your shipping address" %> <br>
+<%= f.submit %>
+<% end %>
+</center>

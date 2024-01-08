@@ -1,0 +1,12 @@
+
+<table border>
+<% @addresses.each do |std|%>
+   <tr>
+   <td><%= link_to std.name, customer_path(std)%></td>
+   <td><%= button_to  'edit', edit_customer_path(std), method: 'get'%></td>
+   <td><%= button_to  'Remove', customer_path(std), method: 'delete'%></td>
+   </tr>
+    <% end %>
+    <%= link_to "Add New address", new_address_path %>
+</table>
+

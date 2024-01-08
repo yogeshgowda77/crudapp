@@ -1,0 +1,12 @@
+<center>
+<table border>
+<% @products.each do |std| %>
+   <tr>
+   <td><%= link_to std.sku, product_path(std)%></td>
+   <td><%= button_to  'edit', edit_product_path(std), method: 'get'%></td>
+   <td><%= button_to  'Remove', product_path(std), method: 'delete'%></td>
+   </tr>
+    <% end %>
+    <%= link_to "Add New product", new_product_path %>
+</table>
+</center>

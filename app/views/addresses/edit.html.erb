@@ -1,0 +1,13 @@
+
+<h3>Update a address </h3>
+<%= form_with model: @address do |f| %>
+<%= f.text_field :name,placeholder:"Enter your name" %> <br>
+<%= f.text_field :phone,placeholder:"Enter your phone" %> <br>
+<%= f.text_field :address_line1,placeholder:"Enter your address" %> <br>
+<%= f.text_field :address_line2,placeholder:"Enter your address" %> <br>
+<%= f.text_field :city,placeholder:"Enter your city" %> <br>
+<%= f.text_field :state,placeholder:"Enter your state" %> <br>
+<%= f.text_field :country,placeholder:"Enter your country" %> <br>
+<%= f.text_field :pin,placeholder:"Enter your pin" %> <br>
+<%= f.submit %>
+<% end %>

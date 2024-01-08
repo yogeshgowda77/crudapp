@@ -1,0 +1,12 @@
+<center>
+<table border>
+<% @orders.each do |std|%>
+   <tr>
+   <td><%= link_to std.Order_Number, order_path(std)%></td>
+   <td><%= button_to  'edit', edit_order_path(std), method: 'get'%></td>
+   <td><%= button_to  'Remove', order_path(std), method: 'delete'%></td>
+   </tr>
+    <% end %>
+    <%= link_to "Add New order", new_order_path %>
+</table>
+</center>

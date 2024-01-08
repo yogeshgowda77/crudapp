@@ -1,0 +1,69 @@
+<center>
+<h1>Edit Customer with Order, Products, and Addresses</h1>
+
+<%= form_with(model: @customer, url: customers_path, local: true) do |form| %>
+  <%= form.text_field :name, placeholder: 'Name' %>
+  <%= form.text_field :phone, placeholder: 'Phone' %>
+  <%= form.text_field :email, placeholder: 'Email' %>
+  <%= form.text_field :address, placeholder: 'Address' %>
+
+  <br>
+  <br>
+
+  <%= form.fields_for :address_attributes do |address_form| %>
+    <%= address_form.text_field :name, placeholder: 'Address Name' %>
+    <%= address_form.text_field :phone, placeholder: 'Address Phone' %>
+    <%= address_form.text_field :address_line_1, placeholder: 'Address Line 1' %>
+    <%= address_form.text_field :address_line_2, placeholder: 'Address Line 2' %>
+    <%= address_form.text_field :city, placeholder: 'City' %>
+    <%= address_form.text_field :state, placeholder: 'State' %>
+    <%= address_form.text_field :country, placeholder: 'Country' %>
+    <%= address_form.text_field :pin, placeholder: 'Pin' %>
+  <% end %>
+
+  <br>
+  <br>
+
+  <%= form.fields_for :orders_attributes do |order_form| %>
+    <%= order_form.text_field :order_number, placeholder: 'Order Number' %>
+    <%= order_form.text_field :date_of_order, placeholder: 'Date of Order' %>
+
+    <br>
+    <br>
+
+    
+
+    <%= order_form.fields_for :billing_address_attributes do |billing_address_form| %>
+      <%= billing_address_form.text_field :name, placeholder: 'Billing Name' %>
+      <%= billing_address_form.text_field :phone, placeholder: 'Billing Phone' %>
+      <%= billing_address_form.text_field :address_line_1, placeholder: 'Billing Address Line 1' %>
+      <%= billing_address_form.text_field :address_line_2, placeholder: 'Billing Address Line 2' %>
+      <%= billing_address_form.text_field :city, placeholder: 'Billing City' %>
+      <%= billing_address_form.text_field :state, placeholder: 'Billing State' %>
+      <%= billing_address_form.text_field :country, placeholder: 'Billing Country' %>
+      <%= billing_address_form.text_field :pin, placeholder: 'Billing Pin' %>
+    <% end %>
+
+
+    <br>
+    <br>
+
+    <%= order_form.fields_for :shipping_address_attributes do |shipping_address_form| %>
+      <%= shipping_address_form.text_field :name, placeholder: 'Shipping Name' %>
+      <%= shipping_address_form.text_field :phone, placeholder: 'Shipping Phone' %>
+      <%= shipping_address_form.text_field :address_line_1, placeholder: 'Shipping Address Line 1' %>
+      <%= shipping_address_form.text_field :address_line_2, placeholder: 'Shipping Address Line 2' %>
+      <%= shipping_address_form.text_field :city, placeholder: 'Shipping City' %>
+      <%= shipping_address_form.text_field :state, placeholder: 'Shipping State' %>
+      <%= shipping_address_form.text_field :country, placeholder: 'Shipping Country' %>
+      <%= shipping_address_form.text_field :pin, placeholder: 'Shipping Pin' %>
+    <% end %>
+
+
+    <br>
+    <br>
+  <% end %>
+
+  <%= form.submit 'Update Customer' %>
+<% end %>
+</center>

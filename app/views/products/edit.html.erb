@@ -1,0 +1,11 @@
+<center>
+<h3>Update a product </h3>
+<%= form_with model: @product do |f| %>
+<%= f.text_field :sku,placeholder:"Enter your sku" %> <br>
+<%= f.text_field :mrp,placeholder:"Enter your mrp" %> <br>
+<%= f.text_field :quantity,placeholder:"Enter your quantity" %> <br>
+<%= f.text_field :discount,placeholder:"Enter your discount" %> <br>
+<%= f.text_field :net_Price,placeholder:"Enter your net_Price" %> <br>
+<%= f.submit %>
+<% end %>
+</center>
